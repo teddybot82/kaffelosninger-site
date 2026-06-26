@@ -1,0 +1,146 @@
+{
+  "name": "Kaffelosninger Lead Intake",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kaffelosninger-lead",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        260,
+        300
+      ],
+      "webhookId": "kaffelosninger-lead"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $json.body ?? $json;\nreturn [{\n  json: {\n    source: body.source || 'kaffelosninger.dk landing page',\n    submittedAt: body.submittedAt || new Date().toISOString(),\n    companyType: body.companyType || '',\n    companySize: body.companySize || '',\n    dailyCups: body.dailyCups || '',\n    machineType: body.machineType || '',\n    requirements: Array.isArray(body.requirements) ? body.requirements.join(', ') : (body.requirements || ''),\n    name: body.name || '',\n    company: body.company || '',\n    email: body.email || '',\n    phone: body.phone || '',\n    notes: body.notes || ''\n  }\n}];"
+      },
+      "id": "normalize-lead",
+      "name": "Normalize Lead",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "Vi har modtaget din foresporgsel",
+        "emailType": "text",
+        "message": "Hej {{ $json.name }},\n\nTak for din foresporgsel om en kaffelosning.\nVi har modtaget dine oplysninger og vender tilbage med relevante tilbud.\n\nVirksomhed: {{ $json.company }}\nLosning: {{ $json.machineType }}\nForbrug: {{ $json.dailyCups }}\n\nVenlig hilsen\nKaffelosninger.dk"
+      },
+      "id": "send-confirmation",
+      "name": "Send Confirmation Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        780,
+        200
+      ],
+      "disabled": true,
+      "notes": "Enable after configuring an SMTP credential."
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "Leads",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "submittedAt": "={{ $json.submittedAt }}",
+            "source": "={{ $json.source }}",
+            "name": "={{ $json.name }}",
+            "company": "={{ $json.company }}",
+            "email": "={{ $json.email }}",
+            "phone": "={{ $json.phone }}",
+            "companyType": "={{ $json.companyType }}",
+            "companySize": "={{ $json.companySize }}",
+            "dailyCups": "={{ $json.dailyCups }}",
+            "machineType": "={{ $json.machineType }}",
+            "requirements": "={{ $json.requirements }}",
+            "notes": "={{ $json.notes }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "save-to-sheets",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        780,
+        300
+      ],
+      "disabled": true,
+      "notes": "Enable after adding a Google Sheets credential and your sheet ID."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"ok\": true,\n  \"message\": \"Lead received\"\n}",
+        "options": {}
+      },
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Lead": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save to Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "versionId": "lead-intake-example-v1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
