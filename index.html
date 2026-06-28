@@ -276,6 +276,141 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
       }, true);
 
+      const leadState = {
+        companySize: "",
+        beverages: [],
+        milk: [],
+        machineType: "",
+        waterType: "",
+        name: "",
+        company: "",
+        email: "",
+        phone: ""
+      };
+
+      function normalizeLeadText(value) {
+        return (value || "").replace(/\s+/g, " ").trim();
+      }
+
+      function leadCurrentStepTitle() {
+        const titles = Array.from(document.querySelectorAll("h3"));
+        const visible = titles.find((title) => {
+          const text = normalizeLeadText(title.textContent);
+          const rect = title.getBoundingClientRect();
+          return rect.width > 0 && rect.height > 0 && [
+            "Jeres forbrug",
+            "Drikkevarer",
+            "Maskine & vand",
+            "Hvem kontakter vi?"
+          ].includes(text);
+        });
+        return visible ? normalizeLeadText(visible.textContent) : "";
+      }
+
+      function leadToggleValue(list, value) {
+        const index = list.indexOf(value);
+        if (index >= 0) list.splice(index, 1);
+        else list.push(value);
+      }
+
+      function syncLeadContactFields() {
+        const inputs = Array.from(document.querySelectorAll("input"));
+        leadState.name = inputs.find((input) => input.placeholder === "Dit fulde navn")?.value.trim() || leadState.name;
+        leadState.company = inputs.find((input) => input.placeholder === "Virksomhedens navn")?.value.trim() || leadState.company;
+        leadState.email = inputs.find((input) => input.placeholder === "navn@virksomhed.dk")?.value.trim() || leadState.email;
+        leadState.phone = inputs.find((input) => input.placeholder === "+45 00 00 00 00")?.value.trim() || leadState.phone;
+      }
+
+      document.addEventListener("input", function () {
+        syncLeadContactFields();
+      }, true);
+
+      document.addEventListener("click", function (event) {
+        const button = event.target.closest("button");
+        if (!button) return;
+
+        const text = normalizeLeadText(getButtonText(button));
+        const step = leadCurrentStepTitle();
+
+        if (text === "Send en ny forespørgsel") {
+          leadState.companySize = "";
+          leadState.beverages = [];
+          leadState.milk = [];
+          leadState.machineType = "";
+          leadState.waterType = "";
+          leadState.name = "";
+          leadState.company = "";
+          leadState.email = "";
+          leadState.phone = "";
+          return;
+        }
+
+        if (step === "Jeres forbrug" && ["1–10", "11–25", "26–50", "51–100", "101–250", "250+"].includes(text)) {
+          leadState.companySize = text;
+        }
+
+        if (step === "Drikkevarer") {
+          if (["Kaffe / espresso", "Cappuccino / caffe latte", "Kakao / Chai", "Ved ikke"].includes(text)) {
+            if (text === "Ved ikke") {
+              leadState.beverages = leadState.beverages.includes(text) ? [] : [text];
+              leadState.milk = [];
+            } else {
+              leadState.beverages = leadState.beverages.filter((value) => value !== "Ved ikke");
+              leadToggleValue(leadState.beverages, text);
+              if (!leadState.beverages.includes("Cappuccino / caffe latte")) {
+                leadState.milk = [];
+              }
+            }
+          } else if (["Frisk mælk", "Pulvermælk", "Ved ikke"].includes(text) && leadState.beverages.includes("Cappuccino / caffe latte")) {
+            if (text === "Ved ikke") {
+              leadState.milk = leadState.milk.includes(text) ? [] : [text];
+            } else {
+              leadState.milk = leadState.milk.filter((value) => value !== "Ved ikke");
+              leadToggleValue(leadState.milk, text);
+            }
+          }
+        }
+
+        if (step === "Maskine & vand") {
+          if (["Køb", "Leje", "Leasing", "Ved ikke"].includes(text)) {
+            leadState.machineType = text;
+          } else if (["Fast vandtilslutning", "Indbygget vandtank", "Ved ikke"].includes(text)) {
+            leadState.waterType = text;
+          }
+        }
+      }, true);
+
+      buildLeadFromDom = function () {
+        syncLeadContactFields();
+
+        const cupEstimates = {
+          "1–10": "5-30",
+          "11–25": "15-75",
+          "26–50": "30-150",
+          "51–100": "60-300",
+          "101–250": "120-750",
+          "250+": "750+"
+        };
+
+        return {
+          submittedAt: new Date().toISOString(),
+          companyType: "",
+          companySize: leadState.companySize,
+          dailyCups: cupEstimates[leadState.companySize] || "",
+          machineType: leadState.machineType,
+          requirements: []
+            .concat(leadState.beverages)
+            .concat(leadState.milk)
+            .concat(leadState.waterType ? [leadState.waterType] : []),
+          name: leadState.name,
+          company: leadState.company,
+          email: leadState.email,
+          phone: leadState.phone,
+          notes: "",
+          source: "kaffelosninger.dk landing page"
+        };
+      };
+
       console.info = function (...args) {
         try {
           if (args[0] === "Lead ready for submission" && args[1] && typeof args[1] === "object") {
