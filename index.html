@@ -182,14 +182,28 @@ document.addEventListener('DOMContentLoaded', async function() {
       const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz9gkEQKDnMZM3WIooF88BVyHKP9Lrzc0KC151cPBtkUBgz82s2Ict_OeN781_yicaAig/exec";
       const originalInfo = console.info ? console.info.bind(console) : function () {};
 
+      function sendLead(payload) {
+        const body = JSON.stringify(payload);
+
+        if (navigator.sendBeacon) {
+          const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
+          if (navigator.sendBeacon(WEBHOOK_URL, blob)) {
+            return;
+          }
+        }
+
+        fetch(WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=UTF-8" },
+          body
+        }).catch((error) => console.warn("Lead webhook failed", error));
+      }
+
       console.info = function (...args) {
         try {
           if (args[0] === "Lead ready for submission" && args[1] && typeof args[1] === "object") {
-            fetch(WEBHOOK_URL, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(args[1])
-            }).catch((error) => console.warn("Lead webhook failed", error));
+            sendLead(args[1]);
           }
         } catch (error) {
           console.warn("Lead webhook bridge failed", error);
