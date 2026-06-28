@@ -2,6 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Bundled Page</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,6 +31,21 @@
   </svg>
 </div>
   <div id="__bundler_loading">Unpacking...</div>
+
+  <script>
+    (function () {
+      var version = "20260628b";
+      try {
+        var url = new URL(window.location.href);
+        if (url.searchParams.get("v") !== version) {
+          url.searchParams.set("v", version);
+          window.location.replace(url.toString());
+        }
+      } catch (error) {
+        console.warn("Version redirect failed", error);
+      }
+    })();
+  </script>
 
   <script>
     
