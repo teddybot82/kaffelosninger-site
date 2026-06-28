@@ -200,6 +200,82 @@ document.addEventListener('DOMContentLoaded', async function() {
         }).catch((error) => console.warn("Lead webhook failed", error));
       }
 
+      function getButtonText(button) {
+        return (button && button.textContent ? button.textContent : "").replace(/\s+/g, " ").trim();
+      }
+
+      function getActiveButtonText(candidates) {
+        const buttons = Array.from(document.querySelectorAll("button"));
+        const normalizedCandidates = candidates.map((candidate) => candidate.toLowerCase());
+        const active = buttons.find((button) => {
+          const text = getButtonText(button).toLowerCase();
+          const styles = window.getComputedStyle(button);
+          return normalizedCandidates.includes(text) && styles.backgroundColor !== "rgb(255, 255, 255)";
+        });
+
+        return active ? getButtonText(active) : "";
+      }
+
+      function buildLeadFromDom() {
+        const inputs = Array.from(document.querySelectorAll("input"));
+        const name = inputs.find((input) => input.placeholder === "Dit fulde navn")?.value.trim() || "";
+        const company = inputs.find((input) => input.placeholder === "Virksomhedens navn")?.value.trim() || "";
+        const email = inputs.find((input) => input.placeholder === "navn@virksomhed.dk")?.value.trim() || "";
+        const phone = inputs.find((input) => input.placeholder === "+45 00 00 00 00")?.value.trim() || "";
+        const companySize = getActiveButtonText(["1–10", "11–25", "26–50", "51–100", "101–250", "250+"]);
+        const machineType = getActiveButtonText(["Køb", "Leje", "Leasing", "Ved ikke"]);
+        const waterType = getActiveButtonText(["Fast vandtilslutning", "Indbygget vandtank", "Ved ikke"]);
+        const beverageButtons = Array.from(document.querySelectorAll("button")).filter((button) => {
+          const text = getButtonText(button);
+          const styles = window.getComputedStyle(button);
+          return ["Kaffe / espresso", "Cappuccino / caffe latte", "Kakao / Chai", "Ved ikke", "Frisk mælk", "Pulvermælk"].includes(text)
+            && styles.backgroundColor !== "rgb(255, 255, 255)";
+        });
+        const requirements = beverageButtons.map((button) => getButtonText(button));
+        if (waterType) requirements.push(waterType);
+
+        const cupEstimates = {
+          "1–10": "5-30",
+          "11–25": "15-75",
+          "26–50": "30-150",
+          "51–100": "60-300",
+          "101–250": "120-750",
+          "250+": "750+"
+        };
+
+        return {
+          submittedAt: new Date().toISOString(),
+          companyType: "",
+          companySize,
+          dailyCups: cupEstimates[companySize] || "",
+          machineType,
+          requirements,
+          name,
+          company,
+          email,
+          phone,
+          notes: "",
+          source: "kaffelosninger.dk landing page"
+        };
+      }
+
+      let lastDomSubmissionAt = 0;
+
+      document.addEventListener("click", function (event) {
+        const button = event.target.closest("button");
+        if (!button) return;
+
+        if (getButtonText(button) !== "Send forespørgsel") return;
+        if (Date.now() - lastDomSubmissionAt < 2000) return;
+
+        lastDomSubmissionAt = Date.now();
+        try {
+          sendLead(buildLeadFromDom());
+        } catch (error) {
+          console.warn("Lead DOM capture failed", error);
+        }
+      }, true);
+
       console.info = function (...args) {
         try {
           if (args[0] === "Lead ready for submission" && args[1] && typeof args[1] === "object") {
