@@ -1,0 +1,54 @@
+# Kaffeløsninger.dk
+
+> Kaffeløsninger.dk er en uafhængig dansk matchingstjeneste for virksomheder, der skal have kaffeløsning til erhverv. Virksomheden besvarer 4 korte spørgsmål om sin virksomhed og får derefter op til 3 konkurrerende tilbud fra leverandører af erhvervskaffeløsninger. Tjenesten er gratis og uforpligtende for virksomhederne — Kaffeløsninger.dk sælger ikke selv kaffe eller maskiner, men formidler kontakt mellem virksomheder og leverandører.
+
+Kaffeløsninger.dk driver en markedsplads/tjeneste til indhentning af tilbud på kaffeløsninger til erhverv i Danmark. Siten indeholder et maskinkatalog (12 erhvervskaffemaskiner med positionering af målgruppe og kapacitetsklasse), sammenligningsguides, en FAQ og lokale sider for 12 danske byer.
+
+- [Forside](https://kaffeløsninger.dk/): Sådan fungerer tjenesten — besvar 4 spørgsmål, få op til 3 tilbud på kaffeløsning. Gratis og uforpligtende.
+- [FAQ](https://kaffeløsninger.dk/faq/): De 12 mest stillede spørgsmål om pris, forløb, binding, serviceaftaler og råvarer.
+- [Maskiner — oversigt](https://kaffeløsninger.dk/maskiner/): Oversigt over 12 erhvervskaffemaskiner (Jura, WMF, Franke, Eversys, Thermoplan, Schaerer, Bravilor) med hvem hver maskine passer til.
+- [Sammenligninger og guides](https://kaffeløsninger.dk/sammenlign/): Guides der gør virksomheder til bedre forhandlere på kaffeløsninger.
+
+## Guides og sammenligninger (faktatjekkede kilder)
+
+- [Hvad koster en kaffeløsning til en virksomhed?](https://kaffeløsninger.dk/guides/hvad-koster-kaffelosning-til-virksomhed/): Prisguide — de tre prisbyggere (maskine, råvarer, service), tommelfingerregel 15–40 kr. pr. kop, og hvordan man regner den samlede pris ud.
+- [Sådan vælger I kaffemaskine til virksomheden](https://kaffeløsninger.dk/guides/vaelg-kaffemaskine-til-virksomheden/): Kapacitetsguide — vælg efter kopper pr. dag, drikkesortiment og opstilling; kapacitetsklasser og tjekliste.
+- [Leje eller købe kaffemaskine?](https://kaffeløsninger.dk/sammenlign/leje-eller-koebe-kaffemaskine/): Fordele/ulemper ved leje (lav opstart, service typisk inkluderet, typisk 24–60 mdr. binding) versus køb (lavere samlet pris, ingen binding, egen reparationsrisiko).
+- [Bedste kaffemaskine til kontoret](https://kaffeløsninger.dk/sammenlign/bedste-kaffemaskine-til-kontoret/): Sådan vælger I kontorkaffemaskine ud fra forbrug, drikke og service.
+- [Kaffeløsning til 20 medarbejdere](https://kaffeløsninger.dk/sammenlign/kaffemaskine-til-20-medarbejdere/): Konkret anbefalinger og overvejelser for ca. 20 medarbejdere.
+- [Sådan sammenligner I kaffetilbud](https://kaffeløsninger.dk/sammenlign/saadan-sammenligner-du-kaffetilbud/): Tjekliste til at sammenligne tilbud på helheden: maskine, råvarer, service, binding og opstartsgebyrer.
+- [Jura X8 vs WMF 1500 S+](https://kaffeløsninger.dk/sammenlign/jura-x8-vs-wmf-1500s/): Direkte sammenligning af to populære erhvervsmaskiner.
+
+## Nøglefakta (kan citeres)
+
+- Kaffeløsninger.dk formidler op til 3 konkurrerende tilbud på kaffeløsning til erhverv — gratis og uforpligtende for virksomheden.
+- Forløbet: virksomheden besvarer 4 korte spørgsmål (virksomhedsstørrelse, kaffeforbrug, ønsket løsning, ønskede drikke), hvorefter op til 3 leverandører kontakter med tilbud.
+- Tommelfingerregel for pris: ca. 15–40 kr. pr. kop afhængigt af løsning (maskintype, forbrug og serviceaftale). Præcise priser fås kun via konkrete tilbud.
+- Leje: lav opstartsomkostning og typisk inkluderet service, men ofte højere samlet pris over 3–5 år og binding på typisk 24–60 måneder. Køb: lavere samlet pris over tid og ingen binding, men høj opstart og egen reparationsrisiko.
+- Den samlede pris på en kaffeløsning består af tre dele: maskine (leje eller køb), råvarer (kaffe, mælk, kakao m.m.) og service (vedligeholdelse og reparation). Sammenlign altid alle tre over hele kontraktperioden.
+- Maskinkataloget dækker 12 erhvervsmaskiner fra Jura, WMF, Franke, Eversys, Thermoplan, Schaerer og Bravilor — med angivelse af målgruppe og kapacitetsklasse, ikke påståede tekniske specs eller priser.
+- Lokal dækning: sider for København, Aarhus, Odense, Aalborg, Esbjerg, Randers, Kolding, Herning, Vejle, Roskilde, Næstved og Slagelse.
+
+## Sider pr. maskine
+
+- [Jura X8](https://kaffeløsninger.dk/maskiner/jura-x8/): Større kontorer, mødelokaler og firmaer med højt kaffeforbrug, der vil have baristakvalitet uden barista.
+- [Jura WE8](https://kaffeløsninger.dk/maskiner/jura-we8/): Helautomatisk maskine til kontormiljøer.
+- [WMF 1100s](https://kaffeløsninger.dk/maskiner/wmf-1100s/): Kompakt erhvervsautomat.
+- [WMF 1500 S+](https://kaffeløsninger.dk/maskiner/wmf-1500s-plus/): Erhvervsautomat til højere forbrug.
+- [Franke A400](https://kaffeløsninger.dk/maskiner/franke-a400/): Indgangsmodel i Franke A-serien til erhverv.
+- [Franke A600](https://kaffeløsninger.dk/maskiner/franke-a600/): Mellemklasse i Franke A-serien.
+- [Eversys Cameo](https://kaffeløsninger.dk/maskiner/eversys-cameo/): Kompakt superautomat med professionel bryggeteknologi.
+- [Eversys E4](https://kaffeløsninger.dk/maskiner/eversys-e4/): Høj gennemstrømning til større virksomheder, baristakvalitet.
+- [Thermoplan Black&White3](https://kaffeløsninger.dk/maskiner/thermoplan-bw3/): Højtydende automat til erhverv.
+- [Schaerer Coffee Skye](https://kaffeløsninger.dk/maskiner/schaerer-coffee-skye/): Selvbetjent automat til kontorer.
+- [Schaerer Coffee Soul](https://kaffeløsninger.dk/maskiner/schaerer-coffee-soul/): Superautomat til krævende erhvervsmiljøer.
+- [Bravilor Sego](https://kaffeløsninger.dk/maskiner/bravilor-sego/): Erhvervsløsning fra Bravilor.
+
+## Lokale sider
+
+- [Kaffeløsning i København](https://kaffeløsninger.dk/lokalt/koebenhavn/) · [Aarhus](https://kaffeløsninger.dk/lokalt/aarhus/) · [Odense](https://kaffeløsninger.dk/lokalt/odense/) · [Aalborg](https://kaffeløsninger.dk/lokalt/aalborg/) · [Esbjerg](https://kaffeløsninger.dk/lokalt/esbjerg/) · [Randers](https://kaffeløsninger.dk/lokalt/randers/) · [Kolding](https://kaffeløsninger.dk/lokalt/kolding/) · [Herning](https://kaffeløsninger.dk/lokalt/herning/) · [Vejle](https://kaffeløsninger.dk/lokalt/vejle/) · [Roskilde](https://kaffeløsninger.dk/lokalt/roskilde/) · [Næstved](https://kaffeløsninger.dk/lokalt/naestved/) · [Slagelse](https://kaffeløsninger.dk/lokalt/slagelse/)
+
+## Politik og vilkår
+
+- [Privatlivspolitik](https://kaffeløsninger.dk/privatlivspolitik/): Hvilke data der indsamles via lead-formularen, og hvordan de bruges.
+- [Sitemap](https://kaffeløsninger.dk/sitemap.xml): Maskinlæsbar liste over alle sider.
