@@ -486,5 +486,32 @@ document.addEventListener('DOMContentLoaded', async function() {
       };
     })();
   </script>
+  <script>
+    window.addEventListener("load", function () {
+      if (document.getElementById("lokale-sider")) return;
+
+      const cities = [
+        ["Aalborg", "/lokalt/aalborg/"], ["Aarhus", "/lokalt/aarhus/"],
+        ["Esbjerg", "/lokalt/esbjerg/"], ["Herning", "/lokalt/herning/"],
+        ["København", "/lokalt/koebenhavn/"], ["Kolding", "/lokalt/kolding/"],
+        ["Næstved", "/lokalt/naestved/"], ["Odense", "/lokalt/odense/"],
+        ["Randers", "/lokalt/randers/"], ["Roskilde", "/lokalt/roskilde/"],
+        ["Slagelse", "/lokalt/slagelse/"], ["Vejle", "/lokalt/vejle/"]
+      ];
+      const linkStyle = "color:#1f3a2e;border:1px solid rgba(26,26,21,.2);padding:10px 14px;text-decoration:none;font:500 15px/1.2 Inter,Arial,sans-serif;";
+      const links = cities.map(function ([name, href]) {
+        return '<a href="' + href + '" style="' + linkStyle + '">' + name + "</a>";
+      }).join("");
+      const section = document.createElement("section");
+      section.setAttribute("aria-labelledby", "lokale-sider");
+      section.style.cssText = "background:#f4efe6;border-top:1px solid rgba(26,26,21,.12);padding:64px 24px;";
+      section.innerHTML = '<div style="max-width:1180px;margin:0 auto;">'
+        + '<p style="margin:0 0 12px;color:#c65a2e;font:600 12px/1.2 Inter,Arial,sans-serif;text-transform:uppercase;">Lokale kaffeløsninger</p>'
+        + '<h2 id="lokale-sider" style="margin:0;color:#1f3a2e;font:400 36px/1.15 Georgia,serif;">Find en kaffeløsning til jeres område</h2>'
+        + '<p style="max-width:640px;margin:16px 0 28px;color:#1a1a15;font:400 17px/1.6 Inter,Arial,sans-serif;">Få op til tre tilbud fra leverandører, der kan hjælpe virksomheder i jeres by.</p>'
+        + '<nav aria-label="Lokale kaffeløsninger" style="display:flex;flex-wrap:wrap;gap:10px;">' + links + "</nav></div>";
+      document.body.appendChild(section);
+    });
+  </script>
 </body>
 </html>
