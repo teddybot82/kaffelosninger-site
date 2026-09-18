@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Priskalkulator — hvad koster jeres kaffe pr. kop? | Kaffeløsninger.dk</title>
-<meta name="description" content="Indtast jeres månedlige udgifter til kaffe — leasing, vedligehold, kaffe og forbrugsvarer — og se hvad én kop kaffe reelt koster jer. Gratis priskalkulator fra Kaffeløsninger.dk.">
+<meta name="description" content="Indtast leje/leasing, pris pr. kg kaffe, forbrugsstoffer og årlige omkostninger — og se hvad én kop kaffe reelt koster jer. Gratis priskalkulator fra Kaffeløsninger.dk.">
 <link rel="canonical" href="https://kaffeløsninger.dk/priskalkulator/">
 <meta property="og:title" content="Priskalkulator — hvad koster jeres kaffe pr. kop? | Kaffeløsninger.dk">
-<meta property="og:description" content="Indtast jeres månedlige udgifter til kaffe og antal kopper — og se straks om I ligger i den billige, normale eller dyre ende. Gratis og uforpligtende.">
+<meta property="og:description" content="Indtast jeres udgifter og antal kopper — og se straks om I ligger i den billige, normale eller dyre ende. Ejer I maskinen selv, bruges en skala uden maskinomkostninger. Gratis og uforpligtende.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kaffeløsninger.dk/priskalkulator/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Kaffe-priskalkulator", "url": "https://kaffeløsninger.dk/priskalkulator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "Beregn prisen pr. kop kaffe på baggrund af virksomhedens månedlige udgifter til leasing, vedligehold, kaffe og forbrugsvarer.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "DKK"}, "publisher": {"@type": "Organization", "name": "Kaffeløsninger.dk"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Er kalkulatoren gratis at bruge?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Priskalkulatoren er gratis og kræver ikke login. Ingen data sendes til os — regnestykket foregår kun i din browser."}}, {"@type": "Question", "name": "Hvad hvis jeg ikke kender mine præcise tal?", "acceptedAnswer": {"@type": "Answer", "text": "Brug estimater. Kig på jeres seneste fakturaer for leasing, service og kaffe, eller satset et rundt bud — regnestykket giver et brugbart grundlag, selv med cirka-tal."}}, {"@type": "Question", "name": "Hvad gør jeg med resultatet?", "acceptedAnswer": {"@type": "Answer", "text": "Brug prisen pr. kop som udgangspunkt, når I sammenligner tilbud. Få 3 uafhængige tilbud via Kaffeløsninger.dk og se, hvad samme forbrug koster hos andre leverandører — gratis og uforpligtende."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Kaffe-priskalkulator", "url": "https://kaffeløsninger.dk/priskalkulator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "Beregn prisen pr. kop kaffe ud fra virksomhedens leje/leasing, kaffepris pr. kg, øvrige forbrugsstoffer og årlige omkostninger. Ved 0 kr. i leje bruges en særskilt skala for virksomheder, der ejer deres maskine.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "DKK"}, "publisher": {"@type": "Organization", "name": "Kaffeløsninger.dk"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Er kalkulatoren gratis at bruge?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Priskalkulatoren er gratis og kræver ikke login. Regnestykket foregår kun i din browser."}}, {"@type": "Question", "name": "Vi ejer selv vores maskine — kan vi bruge beregneren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Skriv 0 i feltet til leje og service, så skifter vurderingen automatisk til en skala uden maskinomkostninger, som passer til virksomheder, der ejer deres maskine."}}, {"@type": "Question", "name": "Hvor mange gram kaffe regner I med pr. kop?", "acceptedAnswer": {"@type": "Answer", "text": "Beregningen antager 10 gram pr. kop — standard for bønnemaskiner. Kaffeprisen pr. kop er derfor pris pr. kg divideret med 100."}}, {"@type": "Question", "name": "Bliver mine tal delt med leverandørerne?", "acceptedAnswer": {"@type": "Answer", "text": "Kun hvis du selv vil det. Fluebenet 'Del mine tal' er aktivt som standard, så leverandørerne kan give tilbud ud fra dine faktiske tal. Fjern fluebenet, og tallene bliver ikke sendt med."}}]}</script>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#F7F4EE; color:#2A2A2A; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.7; }
@@ -25,6 +25,7 @@ main { max-width:980px; margin:0 auto; padding:40px 24px; }
 h1 { font-family:Georgia,serif; font-size:32px; line-height:1.3; color:#1F3A2E; margin-bottom:8px; }
 .subtitle { font-size:18px; color:#555; margin-bottom:28px; }
 h2 { font-family:Georgia,serif; font-size:24px; color:#1F3A2E; margin:32px 0 12px; }
+h3 { font-size:18px; color:#1F3A2E; margin:20px 0 8px; }
 p, li { font-size:16.5px; }
 ul, ol { margin:12px 0 14px 22px; }
 li { margin-bottom:6px; }
@@ -47,22 +48,22 @@ footer a { color:#F4EFE6; }
 .calc-card { background:#fff; border:1px solid #dcd6c8; border-radius:12px; padding:24px; }
 .calc-card h2 { margin:0 0 4px; font-size:20px; }
 .calc-card .step-label { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:#C65A2E; font-weight:700; }
-.field { margin-top:14px; }
+.field { margin-top:16px; }
 .field label { display:block; font-size:15px; font-weight:600; color:#1F3A2E; margin-bottom:4px; }
 .field .hint { font-size:13px; color:#777; font-weight:400; }
 .input-row { display:flex; align-items:center; gap:8px; }
 .input-row input { width:100%; padding:10px 12px; font-size:16px; border:1px solid #dcd6c8; border-radius:8px; background:#FDFCF9; color:#2A2A2A; }
 .input-row input:focus { outline:2px solid #C65A2E; outline-offset:0; border-color:#C65A2E; }
-.input-row .suffix { font-size:14px; color:#777; white-space:nowrap; min-width:56px; }
-.total-line { display:flex; justify-content:space-between; align-items:center; border-top:1px dashed #dcd6c8; margin-top:18px; padding-top:12px; font-weight:700; color:#1F3A2E; font-size:16px; }
+.input-row .suffix { font-size:14px; color:#777; white-space:nowrap; min-width:64px; }
+.total-line { display:flex; justify-content:space-between; align-items:center; border-top:1px dashed #dcd6c8; margin-top:20px; padding-top:12px; font-weight:700; color:#1F3A2E; font-size:16px; }
 .result-price { font-family:Georgia,serif; font-size:44px; line-height:1.15; color:#1F3A2E; margin-top:10px; }
 .result-price small { font-size:17px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:#555; font-weight:400; }
 .result-meta { font-size:15px; color:#555; margin-top:2px; }
 .gauge-wrap { margin-top:22px; }
 .gauge-bar { position:relative; display:flex; height:16px; border-radius:8px; overflow:hidden; }
-.gauge-zone-billig { background:#7FA05A; width:30%; }
-.gauge-zone-mellem { background:#D9A93F; width:30%; }
-.gauge-zone-dyr { background:#B04A32; width:40%; }
+.gauge-zone-billig { background:#7FA05A; }
+.gauge-zone-mellem { background:#D9A93F; }
+.gauge-zone-dyr { background:#B04A32; }
 .gauge-marker { position:absolute; top:-5px; width:4px; height:26px; background:#1F3A2E; border-radius:2px; transform:translateX(-2px); transition:left .3s ease; }
 .gauge-ticks { position:relative; height:18px; font-size:12px; color:#777; margin-top:6px; }
 .gauge-ticks span { position:absolute; transform:translateX(-50%); }
@@ -76,7 +77,12 @@ footer a { color:#F4EFE6; }
 .verdict.tier-mellem h3 { color:#8A6A1F; }
 .verdict.tier-dyr { background:#F8E4DC; border-color:#E0B0A0; }
 .verdict.tier-dyr h3 { color:#8F3520; }
-.verdict .cta-btn { margin-top:14px; font-size:15px; padding:11px 24px; }
+.verdict .cta-btn { margin-top:14px; font-size:15px; padding:12px 22px; }
+.share-box { margin-top:12px; text-align:left; }
+.share-box label { display:flex; align-items:flex-start; gap:8px; font-size:14.5px; font-weight:600; color:#1F3A2E; cursor:pointer; }
+.share-box input[type="checkbox"] { width:18px; height:18px; margin-top:3px; accent-color:#C65A2E; cursor:pointer; flex-shrink:0; }
+.share-box .share-note { font-size:13px; color:#777; margin:6px 0 0 26px; }
+.mode-note { margin-top:14px; font-size:14px; color:#555; background:#EEF2E6; border-radius:8px; padding:10px 14px; }
 .saving-line { margin-top:16px; font-size:14.5px; color:#555; }
 .saving-line strong { color:#1F3A2E; }
 .breakdown { margin-top:18px; border-top:1px dashed #dcd6c8; padding-top:12px; }
@@ -100,70 +106,69 @@ footer a { color:#F4EFE6; }
 <main>
   <div class="breadcrumb"><a href="/">Forside</a> → <a href="/priskalkulator/">Priskalkulator</a></div>
   <h1>Priskalkulator: Hvad koster jeres kaffe pr. kop?</h1>
-  <div class="subtitle">Indtast jeres månedlige udgifter — leasing, vedligehold, kaffe og forbrugsvarer — og find ud af, om I ligger i den billige, normale eller dyre ende.</div>
+  <div class="subtitle">Fire tal om jeres kaffeløsning — og I ved, hvad én kop reelt koster, og om I ligger i den billige, normale eller dyre ende.</div>
 
   <div class="calc-grid">
     <div class="calc-card">
-      <span class="step-label">Trin 1</span>
-      <h2>Jeres udgifter pr. måned</h2>
-      <p style="font-size:14px;color:#777;margin-top:2px;">Udfyld de felter, I kender — og sæt 0 i resten.</p>
+      <span class="step-label">Jeres udgifter</span>
+      <h2>Indtast jeres tal</h2>
+      <p style="font-size:14px;color:#777;margin-top:2px;">Udfyld det, I kender — resten kan blive 0.</p>
       <div class="field">
-        <label for="leasing">Leasing / leje af kaffemaskine</label>
-        <div class="input-row"><input type="text" id="leasing" inputmode="decimal" value="700"><span class="suffix">kr./md.</span></div>
+        <label for="leje">Leje, leasing &amp; serviceaftale <span class="hint">(0 kr. hvis I ejer maskinen)</span></label>
+        <div class="input-row"><input type="text" id="leje" inputmode="decimal" value="800"><span class="suffix">kr./md.</span></div>
       </div>
       <div class="field">
-        <label for="service">Vedligehold &amp; serviceaftale</label>
-        <div class="input-row"><input type="text" id="service" inputmode="decimal" value="300"><span class="suffix">kr./md.</span></div>
+        <label for="kgpris">Pris pr. kg kaffe <span class="hint">(bønner til jeres maskine)</span></label>
+        <div class="input-row"><input type="text" id="kgpris" inputmode="decimal" value="200"><span class="suffix">kr./kg</span></div>
       </div>
       <div class="field">
-        <label for="kaffe">Kaffe, mælk og andre råvarer</label>
-        <div class="input-row"><input type="text" id="kaffe" inputmode="decimal" value="1400"><span class="suffix">kr./md.</span></div>
-      </div>
-      <div class="field">
-        <label for="forbrug">Kopper, sukker, mælkekartoner m.m. <span class="hint">(forbrugsvarer)</span></label>
+        <label for="forbrug">Øvrige forbrugsstoffer <span class="hint">(mælk, kakao, rengøringsprodukter)</span></label>
         <div class="input-row"><input type="text" id="forbrug" inputmode="decimal" value="400"><span class="suffix">kr./md.</span></div>
       </div>
       <div class="field">
-        <label for="andet">Andet <span class="hint">(fx fragt, afkalkning, leje af opladning)</span></label>
-        <div class="input-row"><input type="text" id="andet" inputmode="decimal" value="200"><span class="suffix">kr./md.</span></div>
+        <label for="aarlig">Yderligere årlige omkostninger <span class="hint">(service udenfor aftale, kalkfilter m.m.)</span></label>
+        <div class="input-row"><input type="text" id="aarlig" inputmode="decimal" value="1200"><span class="suffix">kr./år</span></div>
       </div>
-      <div class="total-line"><span>Samlet udgift</span><span id="sumTotal">3.000 kr./md.</span></div>
-
-      <span class="step-label" style="display:block;margin-top:26px;">Trin 2</span>
-      <h2 style="margin-top:4px;">Antal kopper pr. måned</h2>
       <div class="field">
         <label for="kopper">Kopper drukket pr. måned <span class="hint">(fx medarbejdere × kopper om dagen × arbejdsdage)</span></label>
         <div class="input-row"><input type="text" id="kopper" inputmode="numeric" value="600"><span class="suffix">kopper/md.</span></div>
       </div>
+      <div class="total-line"><span>Samlet udgift</span><span id="sumTotal">—</span></div>
     </div>
 
     <div class="calc-card" id="resultCard" aria-live="polite">
       <span class="step-label">Resultat</span>
       <div id="resultContent">
-        <div class="result-price"><span id="pricePerCup">5,00</span> <small>kr. pr. kop</small></div>
-        <div class="result-meta" id="annualLine">3.000 kr. pr. måned · 36.000 kr. om året</div>
+        <div class="result-price"><span id="pricePerCup">—</span> <small>kr. pr. kop</small></div>
+        <div class="result-meta" id="annualLine"></div>
 
         <div class="gauge-wrap">
           <div class="gauge-bar">
-            <div class="gauge-zone-billig"></div>
-            <div class="gauge-zone-mellem"></div>
-            <div class="gauge-zone-dyr"></div>
-            <div class="gauge-marker" id="gaugeMarker" style="left:50%;"></div>
+            <div class="gauge-zone-billig" id="zoneBillig"></div>
+            <div class="gauge-zone-mellem" id="zoneMellem"></div>
+            <div class="gauge-zone-dyr" id="zoneDyr"></div>
+            <div class="gauge-marker" id="gaugeMarker" style="left:40%;"></div>
           </div>
           <div class="gauge-ticks">
             <span style="left:0%; transform:none;">0</span>
-            <span style="left:30%;">3 kr.</span>
-            <span style="left:60%;">6 kr.</span>
-            <span style="left:100%; transform:translateX(-100%);">10+ kr.</span>
+            <span id="tickBillig" style="left:30%;">3 kr.</span>
+            <span id="tickDyr" style="left:60%;">6 kr.</span>
+            <span id="tickMax" style="left:100%; transform:translateX(-100%);">10+ kr.</span>
           </div>
-          <div class="gauge-caption"><span>Billig ende</span><span>Normal</span><span>Dyr ende</span></div>
+          <div class="gauge-caption" id="gaugeCaption"><span>Billig ende</span><span>Normal</span><span>Dyr ende</span></div>
         </div>
 
         <div class="verdict" id="verdict">
           <h3 id="verdictTitle">Vurdering</h3>
           <p id="verdictText"></p>
-          <a class="cta-btn" href="/#formular" id="verdictCta">Få 3 uafhængige tilbud — gratis</a>
+          <a class="cta-btn" href="/#formular" id="verdictCta">Få et bedre tilbud fra op til 3 leverandører</a>
+          <div class="share-box">
+            <label><input type="checkbox" id="shareData" checked> Del mine tal med leverandørerne (anbefalet)</label>
+            <p class="share-note">De indtastede oplysninger bliver medsendt jeres forespørgsel, så leverandørerne kan give tilbud ud fra jeres faktiske tal — ikke generiske priser. Fjern fluebenet, hvis du ikke ønsker at dele tallene.</p>
+          </div>
         </div>
+
+        <div class="mode-note" id="ownerNote" style="display:none;">I har angivet 0 kr. i leje og service — vi regner derfor med, at I ejer jeres maskine, og vurderer jer på en skala uden maskinomkostninger (normalen ligger lavere, når man ejer selv).</div>
 
         <p class="saving-line" id="savingLine"></p>
 
@@ -178,26 +183,35 @@ footer a { color:#F4EFE6; }
 
   <h2>Sådan regner vi ud</h2>
   <p>Prisen pr. kop er jeres <strong>samlede månedlige udgift divideret med antal kopper</strong>:</p>
-  <p style="background:#fff;border:1px solid #dcd6c8;border-radius:8px;padding:14px 18px;text-align:center;font-size:17px;">(leasing + vedligehold + kaffe + forbrugsvarer + andet) ÷ antal kopper = <strong>pris pr. kop</strong></p>
-  <p>Pointen er at regne på <em>det hele</em>. Mange virksomheder ser kun på månedslejen for maskinen — men råvarer, forbrugsvarer og serviceaftale skal også med, før man kender den reelle pris pr. kop.</p>
+  <p style="background:#fff;border:1px solid #dcd6c8;border-radius:8px;padding:14px 18px;text-align:center;font-size:16.5px;">(leje + øvrige forbrugsstoffer + årlige omkostninger ÷ 12 + kaffebønnernes andel) ÷ antal kopper = <strong>pris pr. kop</strong></p>
+  <p>Kaffebønnernes andel regnes ud fra jeres pris pr. kg med en antagelse på <strong>10 gram kaffe pr. kop</strong> — standard for bønnemaskiner. Det betyder, at kaffen koster <em>pris pr. kg ÷ 100</em> pr. kop: Ved 200 kr./kg koster bønnerne 2,00 kr. pr. kop.</p>
+  <div class="note"><strong>Ejer I jeres maskine?</strong> Skriv 0 i leje-feltet. Vurderingen skifter så automatisk til en skala for selvejede maskiner, hvor normalen ligger lavere — fordi maskinomkostningen ikke skal ud over koppen. Husk dog, at en selvejet maskine løbende kræver vedligehold, hvilket I kan lægge i feltet til årlige omkostninger.</div>
 
   <h2>Hvad er normalt pr. kop?</h2>
-  <p>Når maskine, service, kaffe og forbrugsvarer regnes sammen, lander de fleste danske erhvervsløsninger på <strong>2-6 kr. pr. kop</strong> — råvarerne alene tegner typisk 1-3 kr. alt efter drikkesortiment og kvalitet. Her er hvor grænserne typisk går:</p>
+  <p>Når maskine, service, kaffe og forbrugsstoffer regnes sammen, lander de fleste danske erhvervsløsninger på <strong>2–6 kr. pr. kop</strong>. Her er hvor grænserne typisk går:</p>
   <table>
     <tr><th>Pris pr. kop</th><th>Vurdering</th><th>Hvad det typisk betyder</th></tr>
     <tr><td>Under 3 kr.</td><td>Billig ende</td><td>Meget skarp aftale — ofte med fokus på pris frem for kvalitet</td></tr>
     <tr><td>3–6 kr.</td><td>Normal</td><td>Midt på markedet — her er der ofte plads til at forhandle</td></tr>
     <tr><td>Over 6 kr.</td><td>Dyr ende</td><td>Typisk lavt forbrug med faste omkostninger — eller en aftale, der fortjener at blive udfordret</td></tr>
   </table>
-  <div class="note">Ligger I i den dyre ende, skyldes det ofte, at forbruget er lille i forhold til en fast månedsleje. Det kan stadig betale sig at sammenligne — nogle leverandører har løsninger til netop små forbrug. Benchmarket bygger på danske erhvervsudbydere, hvor all-inclusive kopaftaler typisk ligger omkring 2,50-5 kr. pr. kop, og erhvervskaffebønner typisk koster 160-230 kr./kg (7-10 g. pr. kop).</div>
+  <p><strong>Ejer I selv maskinen</strong> (0 kr. i leje), ligger normalen lavere, fordi maskinlejen ikke skal finansieres over koppen:</p>
+  <table>
+    <tr><th>Pris pr. kop</th><th>Vurdering — selvejet maskine</th></tr>
+    <tr><td>Under 2 kr.</td><td>Billig ende</td></tr>
+    <tr><td>2–4 kr.</td><td>Normal</td></tr>
+    <tr><td>Over 4 kr.</td><td>Dyr ende</td></tr>
+  </table>
+  <div class="note">Ligger I i den dyre ende, skyldes det ofte, at forbruget er lille i forhold til faste omkostninger. Det kan stadig betale sig at sammenligne — nogle leverandører har løsninger til netop små forbrug. Benchmarket bygger på danske erhvervsudbydere, hvor all-inclusive kopaftaler typisk ligger omkring 2,50–5 kr. pr. kop, og erhvervskaffebønner typisk koster 160–230 kr./kg.</div>
 
   <h2>Ofte stillede spørgsmål</h2>
-  <div class="faq-item"><h3>Er kalkulatoren gratis at bruge?</h3><p>Ja. Priskalkulatoren er gratis og kræver ikke login. Ingen data sendes til os — regnestykket foregår kun i din browser.</p></div>
-  <div class="faq-item"><h3>Hvad hvis jeg ikke kender mine præcise tal?</h3><p>Brug estimater. Kig på jeres seneste fakturaer for leasing, service og kaffe, eller satset et rundt bud — regnestykket giver et brugbart grundlag, selv med cirka-tal.</p></div>
-  <div class="faq-item"><h3>Hvad gør jeg med resultatet?</h3><p>Brug prisen pr. kop som udgangspunkt, når I sammenligner tilbud. Få 3 uafhængige tilbud via Kaffeløsninger.dk og se, hvad samme forbrug koster hos andre leverandører — gratis og uforpligtende.</p></div>
+  <div class="faq-item"><h3>Er kalkulatoren gratis at bruge?</h3><p>Ja. Priskalkulatoren er gratis og kræver ikke login. Regnestykket foregår kun i din browser.</p></div>
+  <div class="faq-item"><h3>Vi ejer selv vores maskine — kan vi bruge beregneren?</h3><p>Ja. Skriv 0 i feltet til leje og service, så skifter vurderingen automatisk til en skala uden maskinomkostninger, som passer til virksomheder, der ejer deres maskine.</p></div>
+  <div class="faq-item"><h3>Hvor mange gram kaffe regner I med pr. kop?</h3><p>Beregningen antager 10 gram pr. kop — standard for bønnemaskiner. Kaffeprisen pr. kop er derfor pris pr. kg divideret med 100.</p></div>
+  <div class="faq-item"><h3>Bliver mine tal delt med leverandørerne?</h3><p>Kun hvis du selv vil det. Fluebenet "Del mine tal" er aktivt som standard, så leverandørerne kan give tilbud ud fra dine faktiske tal. Fjern fluebenet, og tallene bliver ikke sendt med.</p></div>
 
   <div class="cta-box">
-    <h2>Få 3 konkurrerende tilbud på kaffeløsning</h2>
+    <h2>Få et bedre tilbud fra op til 3 leverandører</h2>
     <p>Besvar 4 korte spørgsmål — så matcher vi jer med op til 3 leverandører.<br>Gratis og uforpligtende.</p>
     <a class="cta-btn" href="/#formular">Få 3 tilbud her</a>
   </div>
@@ -209,14 +223,11 @@ footer a { color:#F4EFE6; }
 
 <script>
 (function () {
-  var expenseFields = [
-    { id: 'leasing', label: 'Leasing / leje' },
-    { id: 'service', label: 'Vedligehold & service' },
-    { id: 'kaffe',   label: 'Kaffe & råvarer' },
-    { id: 'forbrug', label: 'Forbrugsvarer' },
-    { id: 'andet',   label: 'Andet' }
-  ];
-  var BILLIG = 3, DYR = 6, GAUGE_MAX = 10;
+  var GRAM_PR_KOP = 10;
+  var SCALES = {
+    leje:   { billig: 3, dyr: 6, max: 10 },
+    ejer:   { billig: 2, dyr: 4, max: 8 }
+  };
   var fmtKr  = new Intl.NumberFormat('da-DK', { maximumFractionDigits: 0 });
   var fmtOre = new Intl.NumberFormat('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
@@ -235,51 +246,105 @@ footer a { color:#F4EFE6; }
   function round100(n) { return Math.round(n / 100) * 100; }
 
   function getValues() {
-    var expenses = [], total = 0;
-    expenseFields.forEach(function (f) {
-      var v = parseNumber(document.getElementById(f.id).value);
-      if (v < 0) v = 0;
-      expenses.push({ label: f.label, value: v });
-      total += v;
+    var leje    = Math.max(parseNumber(document.getElementById('leje').value), 0);
+    var kgpris  = Math.max(parseNumber(document.getElementById('kgpris').value), 0);
+    var forbrug = Math.max(parseNumber(document.getElementById('forbrug').value), 0);
+    var aarlig  = Math.max(parseNumber(document.getElementById('aarlig').value), 0);
+    var kopper  = parseNumber(document.getElementById('kopper').value);
+    var kaffeMd = kopper > 0 ? kopper * (GRAM_PR_KOP / 1000) * kgpris : 0;
+    var aarligMd = aarlig / 12;
+    return {
+      leje: leje, kgpris: kgpris, forbrug: forbrug, aarlig: aarlig, aarligMd: aarligMd,
+      kopper: kopper, kaffeMd: kaffeMd,
+      totalMd: leje + forbrug + aarligMd + kaffeMd,
+      isOwner: leje === 0
+    };
+  }
+
+  function setGauge(scale) {
+    var billigPct = scale.billig / scale.max * 100;
+    var mellemPct = (scale.dyr - scale.billig) / scale.max * 100;
+    document.getElementById('zoneBillig').style.width = billigPct + '%';
+    document.getElementById('zoneMellem').style.width = mellemPct + '%';
+    document.getElementById('zoneDyr').style.width = (100 - billigPct - mellemPct) + '%';
+    document.getElementById('tickBillig').textContent = scale.billig + ' kr.';
+    document.getElementById('tickBillig').style.left = billigPct + '%';
+    document.getElementById('tickDyr').textContent = scale.dyr + ' kr.';
+    document.getElementById('tickDyr').style.left = (billigPct + mellemPct) + '%';
+    document.getElementById('tickMax').textContent = scale.max + '+ kr.';
+  }
+
+  function updateCtaHref(data) {
+    var cta = document.getElementById('verdictCta');
+    var share = document.getElementById('shareData').checked;
+    if (!share) {
+      cta.setAttribute('href', '/#formular');
+      return;
+    }
+    var p = new URLSearchParams({
+      leje: Math.round(data.leje),
+      kgpris: Math.round(data.kgpris),
+      forbrug: Math.round(data.forbrug),
+      aarlig: Math.round(data.aarlig),
+      kopper: Math.round(data.kopper)
     });
-    var cups = parseNumber(document.getElementById('kopper').value);
-    return { expenses: expenses, total: total, cups: cups };
+    cta.setAttribute('href', '/?' + p.toString() + '#formular');
   }
 
   function render() {
     var data = getValues();
-    var valid = data.total > 0 && data.cups >= 1;
+    var valid = data.totalMd > 0 && data.kopper >= 1;
     document.getElementById('resultContent').style.display = valid ? '' : 'none';
     document.getElementById('resultEmpty').style.display = valid ? 'none' : '';
-    document.getElementById('sumTotal').textContent = fmtKr.format(data.total) + ' kr./md.';
-    if (!valid) return;
+    document.getElementById('sumTotal').textContent = valid
+      ? fmtKr.format(Math.round(data.totalMd)) + ' kr./md.'
+      : (data.totalMd > 0 ? fmtKr.format(Math.round(data.totalMd)) + ' kr./md.' : '—');
+    if (!valid) { updateCtaHref(data); return; }
 
-    var perCup = data.total / data.cups;
-    var annual = data.total * 12;
+    var perCup = data.totalMd / data.kopper;
+    var annual = data.totalMd * 12;
     document.getElementById('pricePerCup').textContent = fmtOre.format(perCup);
     document.getElementById('annualLine').textContent =
-      fmtKr.format(data.total) + ' kr. pr. måned · ' + fmtKr.format(annual) + ' kr. om året';
+      fmtKr.format(Math.round(data.totalMd)) + ' kr. pr. måned · ' + fmtKr.format(Math.round(annual)) + ' kr. om året';
 
-    var marker = document.getElementById('gaugeMarker');
-    marker.style.left = Math.min(Math.max(perCup, 0), GAUGE_MAX - 0.5) / GAUGE_MAX * 100 + '%';
+    var scale = data.isOwner ? SCALES.ejer : SCALES.leje;
+    setGauge(scale);
+    document.getElementById('gaugeMarker').style.left =
+      Math.min(Math.max(perCup, 0), scale.max - 0.5) / scale.max * 100 + '%';
+    document.getElementById('ownerNote').style.display = data.isOwner ? '' : 'none';
 
     var verdict = document.getElementById('verdict');
     var title = document.getElementById('verdictTitle');
     var text = document.getElementById('verdictText');
     verdict.className = 'verdict';
 
-    if (perCup > DYR) {
+    if (perCup > scale.dyr) {
       verdict.classList.add('tier-dyr');
-      title.textContent = 'I ligger i den dyre ende';
-      text.textContent = 'Jeres pris pr. kop er markant over det, vi typisk ser på markedet. Her er der som regel penge at spare — på maskinen, råvarerne eller serviceaftalen. Få et tilbud fra os på samme forbrug, og se hvad det reelt koster hos en anden leverandør.';
-    } else if (perCup >= BILLIG) {
+      if (data.isOwner) {
+        title.textContent = 'Høj pris pr. kop for en maskine, I ejer selv';
+        text.textContent = 'Uden maskinleje i tallene burde prisen pr. kop ligge lavt — jeres gør den ikke. Typisk skyldes det dyre råvarer, serviceudgifter eller et lavt forbrug. Få et bedre tilbud fra op til 3 leverandører og se, hvad jeres forbrug reelt burde koste.';
+      } else {
+        title.textContent = 'I ligger i den dyre ende';
+        text.textContent = 'Jeres pris pr. kop er markant over det, vi typisk ser på markedet. Her er der som regel penge at spare — på maskinen, råvarerne eller serviceaftalen. Få et bedre tilbud fra op til 3 leverandører på samme forbrug, og se hvad det reelt koster.';
+      }
+    } else if (perCup >= scale.billig) {
       verdict.classList.add('tier-mellem');
-      title.textContent = 'I ligger midt på markedet';
-      text.textContent = 'Hverken billigst eller dyrest — og netop her er der ofte noget at hente. Enten kan I sandsynligvis få samme løsning billigere, eller også kan I få en markant bedre kaffe til omtrent samme pris. Med 3 uafhængige tilbud ved I på få dage, hvilken af delene der gælder for jer.';
+      if (data.isOwner) {
+        title.textContent = 'Jeres egen maskine koster omtrent, hvad den skal';
+        text.textContent = 'Et fair niveau for en selvejet løsning — men der kan stadig være noget at hente på bønner, service eller en aftale uden binding. Med et bedre tilbud fra op til 3 leverandører kan I enten sænke prisen yderligere eller få en bedre kaffe til omtrent samme pris.';
+      } else {
+        title.textContent = 'I ligger midt på markedet';
+        text.textContent = 'Hverken billigst eller dyrest — og netop her er der ofte noget at hente. Enten kan I sandsynligvis få samme løsning billigere, eller også kan I få en markant bedre kaffe til omtrent samme pris. Med et bedre tilbud fra op til 3 leverandører ved I på få dage, hvilken af delene der gælder for jer.';
+      }
     } else {
       verdict.classList.add('tier-billig');
-      title.textContent = 'I ligger i den billige ende';
-      text.textContent = 'Flot — jeres nuværende aftale er skarp på prisen. Men prisen siger intet om kvaliteten i koppen. Mange virksomheder i den billige ende opdager, at de kan få en bedre kaffe til omtrent samme pris — eller presse prisen yderligere ned — ved hurtigt at bestille 3 uafhængige tilbud.';
+      if (data.isOwner) {
+        title.textContent = 'I ligger i den billige ende';
+        text.textContent = 'Meget skarpt niveau for en selvejet maskine. Men prisen siger intet om kvaliteten i koppen — og service og reservedele kan blive en dyr overraskelse på en ældre maskine. Få et bedre tilbud fra op til 3 leverandører og se, om der er en bedre kaffe — eller en tryggere aftale — til omtrent samme pris.';
+      } else {
+        title.textContent = 'I ligger i den billige ende';
+        text.textContent = 'Flot — jeres nuværende aftale er skarp på prisen. Men prisen siger intet om kvaliteten i koppen. Mange virksomheder i den billige ende opdager, at de kan få en bedre kaffe til omtrent samme pris — eller presse prisen yderligere ned — ved hurtigt at få et bedre tilbud fra op til 3 leverandører.';
+      }
     }
 
     var low = round100(annual * 0.10), high = round100(annual * 0.25);
@@ -289,25 +354,34 @@ footer a { color:#F4EFE6; }
 
     var rows = document.getElementById('breakdownRows');
     rows.innerHTML = '';
-    data.expenses.forEach(function (e) {
+    var parts = [
+      { label: 'Leje, leasing & service', value: data.leje },
+      { label: 'Kaffe (bønner)', value: data.kaffeMd },
+      { label: 'Øvrige forbrugsstoffer', value: data.forbrug },
+      { label: 'Årlige omkostninger (1/12)', value: data.aarligMd }
+    ];
+    parts.forEach(function (e) {
       if (e.value <= 0) return;
       var row = document.createElement('div');
       row.className = 'breakdown-row';
       var left = document.createElement('span');
       left.textContent = e.label;
       var right = document.createElement('span');
-      right.innerHTML = fmtKr.format(e.value) + ' kr. <span class="share">(' +
-        Math.round(e.value / data.total * 100) + ' %)</span>';
+      right.innerHTML = fmtKr.format(Math.round(e.value)) + ' kr. <span class="share">(' +
+        Math.round(e.value / data.totalMd * 100) + ' %)</span>';
       row.appendChild(left);
       row.appendChild(right);
       rows.appendChild(row);
     });
     document.getElementById('breakdown').style.display = rows.children.length ? '' : 'none';
+
+    updateCtaHref(data);
   }
 
-  ['leasing', 'service', 'kaffe', 'forbrug', 'andet', 'kopper'].forEach(function (id) {
+  ['leje', 'kgpris', 'forbrug', 'aarlig', 'kopper'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', render);
   });
+  document.getElementById('shareData').addEventListener('change', render);
   render();
 })();
 </script>

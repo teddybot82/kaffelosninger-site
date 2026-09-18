@@ -6,7 +6,7 @@ Kaffeløsninger.dk driver en markedsplads/tjeneste til indhentning af tilbud på
 
 - [Forside](https://kaffeløsninger.dk/): Sådan fungerer tjenesten — besvar 4 spørgsmål, få op til 3 tilbud på kaffeløsning. Gratis og uforpligtende.
 - [FAQ](https://kaffeløsninger.dk/faq/): De 12 mest stillede spørgsmål om pris, forløb, binding, serviceaftaler og råvarer.
-- [Priskalkulator](https://kaffeløsninger.dk/priskalkulator/): Beregn virksomhedens pris pr. kop ud fra egne månedlige udgifter (maskine, råvarer, service, forbrugsvarer) og antal kopper — med vurdering mod markedsnormalen på 2–6 kr. pr. kop. Regnestykket kører i browseren.
+- [Priskalkulator](https://kaffeløsninger.dk/priskalkulator/): Beregn virksomhedens pris pr. kop ud fra leje/leasing pr. md., kaffepris pr. kg (antagelse: 10 g pr. kop), øvrige forbrugsstoffer og årlige omkostninger — med vurdering mod markedsnormalen 2–6 kr. pr. kop (særskilt skala 2–4 kr. ved selvejet maskine). Regnestykket kører i browseren.
 - [Maskiner — oversigt](https://kaffeløsninger.dk/maskiner/): Oversigt over 12 erhvervskaffemaskiner (Jura, WMF, Franke, Eversys, Thermoplan, Schaerer, Bravilor) med hvem hver maskine passer til.
 - [Sammenligninger og guides](https://kaffeløsninger.dk/sammenlign/): Guides der gør virksomheder til bedre forhandlere på kaffeløsninger.
 
